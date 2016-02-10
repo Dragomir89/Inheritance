@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="AllWork.js"></script>
+    <script src="Task.js"></script>
+    <script src="Employee.js"></script>
+</head>
+<body>
+
+
+<script>
+
+    var t1 = new Task('task_1', 15);
+    var t2 = new Task('task_2', 76);
+    var t3 = new Task('task_3',10);
+    var t4 = new Task('task_4', 38);
+    var t5 = new Task('task_5', 40);
+    var t6 = new Task('task_6', 9);
+    var t7 = new Task('task_7', 30);
+    var t8 = new Task('task_8', 2);
+    var t9 = new Task('task_9', 1);
+    var t10= new Task('task_10',15);
+
+
+    var allWork = new AllWork();
+
+    allWork.addTask(t1);
+    allWork.addTask(t2);
+    allWork.addTask(t3);
+    allWork.addTask(t4);
+    allWork.addTask(t5);
+    allWork.addTask(t6);
+    allWork.addTask(t7);
+    allWork.addTask(t8);
+    allWork.addTask(t9);
+    allWork.addTask(t10);
+
+    var employee_01 = new Employee('Ivancho');
+    var employee_02 = new Employee('Stoqn4o');
+    var employee_04 = new Employee('go6ko ');
+    var employee_05 = new Employee('Mitko');
+
+
+
+
+
+
+    employee_01._allWork = allWork;
+    employee_02._allWork = allWork;
+    employee_04._allWork = allWork;
+    employee_05._allWork = allWork;
+
+
+
+    var counter = 0;
+    var allReady = false;
+
+    while (!allReady){
+        counter++;
+
+        employee_01.startWorkingDay();
+        employee_02.startWorkingDay();
+        employee_04.startWorkingDay();
+        employee_05.startWorkingDay();
+
+
+        console.log('Current day: ' + counter);
+        employee_01.work();
+        employee_02.work();
+
+        employee_04.work();
+        employee_05.work();
+
+
+        if(employee_01.isReady && employee_02.isReady && employee_04.isReady && employee_05.isReady){
+
+            allReady = true;
+        }
+
+    }
+
+
+
+</script>
+</body>
+</html>

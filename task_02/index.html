@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+
+    <script src="Person.js"></script>
+    <script src="Student.js"></script>
+    <script src="Employee.js"></script>
+
+
+</head>
+<body>
+
+<script>
+    var employee1 = new Employee('Go6ko'  , 10, true, 100);
+    var employee2 = new Employee('Ahmed'  , 11, true, 10);
+    var employee3 = new Employee('Mustafa', 22, true, 50);
+    var employee4 = new Employee('Stoqn4o', 33, true, 1000);
+
+    var student1 = new Student('Hristo' , 15, true, 10);
+    var student2 = new Student('Pesho'  , 17, true, 0);
+    var student3 = new Student('Evtimii', 20, true, 4);
+    var student4 = new Student('Ivan4o' , 21, true, 5);
+
+    var person1 = new Person('Duncan Macleod', 299, true);
+
+    var people = [employee1,employee2,employee3,employee4,student1,student2,student3,student4,person1];
+
+    people.forEach(function(e){
+        if(e.constructor.name == "Employee")
+        e.showEmployeeInfo();
+
+        if(e.constructor.name == "Student")
+            e.showStudentInfo();
+
+        if(e.constructor.name == "Person")
+            e.showPersonInfo();
+
+        console.log('')
+    });
+
+
+</script>
+
+</body>
+</html>
