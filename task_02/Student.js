@@ -1,8 +1,7 @@
 function Student(name, age, isMale, score){
 
-    this.name   = name;
-    this.age    = age;
-    this.isMale = Boolean(isMale);
+    Person.call(this);
+
     this.score = score > 6 || score < 2 ? 2 : score;
 
 }

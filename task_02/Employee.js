@@ -1,15 +1,15 @@
 function Employee(name, age, isMale, daySalary){
 
-    this.name   = name;
-    this.age    = age;
-    this.isMale = Boolean(isMale);
+    Person.call(this);
+
     this.daySalary = daySalary;
     this.overtime = 0;
 
 }
 
-Employee.prototype  = Object.create(Person.prototype);
+Employee.prototype = Object.create(Person.prototype);
 Employee.prototype.constructor = Employee;
+
 
 Employee.prototype.calculateOvertime = function(hours){
 
